@@ -10,7 +10,6 @@ import UIKit
 
 class LoginWireframe: NSObject, LoginWireframeProtocol {
     var loginVC: LoginViewController?
-    ///var
     
     func dismissLoginVC() {
         self.loginVC?.dismiss(animated: true, completion: nil)
@@ -20,7 +19,7 @@ class LoginWireframe: NSObject, LoginWireframeProtocol {
         let homeVC = UIStoryboard.init(name: "Home", bundle: nil)
         .instantiateViewController(identifier: "HomeViewController") as? HomeViewController
         homeVC?.navigation = HomeWireframe()
-        //homeVC?.interactor = HomeInteractor()
+        homeVC?.interactor = HomeInteractor()
         homeVC?.navigation?.homeVC = homeVC
         self.loginVC?.present(homeVC!, animated: true, completion: nil)
     }
