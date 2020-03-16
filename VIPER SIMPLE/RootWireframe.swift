@@ -18,6 +18,7 @@ class RootWireframe: NSObject {
     func application(didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?, window: UIWindow) -> Bool {
         self.splashScreenWireframe?.window = window
         self.homeWireframe = HomeWireframe()
+        self.homeWireframe?.splashScreenNavigation = splashScreenWireframe
         self.homeWireframe?.window = window
         checkIfAnyUserPersistentOrNot()
         return true
